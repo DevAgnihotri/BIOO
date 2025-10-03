@@ -42,4 +42,6 @@ const collection = db.collection("links")
 
 const result = await collection.insertOne(body)
 
-phir thuderclient ko chalana mongodbcompass me jaake connect dbana tab data usme aa jayega.
+phir thuderclient ko chalana mongodbcompass me jaake connect dbana tab data usme aa jayega mongodb mein.
+
+51:56
