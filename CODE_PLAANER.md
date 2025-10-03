@@ -12,4 +12,4 @@
 
 7. mai abb env.local file bnaunga
 
-7. mai abb generate folder bnaunga aur usme page.js file iss file me use apni links enter karega ye wo form jisse wo linktree ki apni  links enter karega
+8. mai abb generate folder bnaunga app folder ke andar aur usme page.js file iss file me use apni links enter karega ye wo form jisse wo linktree ki apni  links enter karega
