@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Navbar = () => {
   return (
-  <nav className='bg-white text-black flex absolute justify-between top-12 gap-10 right-[10vw] p-6 w-[80vw] rounded-full'>
+  <nav className='bg-white text-black flex fixed justify-between top-12 gap-10 right-[5vw] p-6 w-[90vw] rounded-full'>
          <Image className=' logo items-center'
          src="https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/66634daccb34e6d65a41c76d_download.svg"
          alt="Linktree Logo"
