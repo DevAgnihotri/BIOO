@@ -73,4 +73,23 @@ fetch(url, options)
 
 13. ek add name ki api bnaayi api folder mein
 
-14. 
+14. abb maine ek input box aur ek button add kra theek abb
+    handle create hona hai ok so app/page.js mein ye code add kra ek handle create krne ka usestate text se uss handle ke name ka input leinge.
+
+    `import { useState } from "react"
+    import { useRouter } from "next/router";
+
+    export default function Home() {
+
+      const [text, setText] = useState("")
+      const router = useRouter()
+      const createTree = () => {
+
+        router.push(`/generate/handle?=${text}`)
+      }`
+
+      kuch aisa kra theek abb isse kaam ho raha tha phir thoda checks lgaye ki handle db me an ho to isliye api me check create kiya... uska code wahi ka whai hai...
+      thoda ise bhi miodify kr diya...
+
+      neeche code me input box me
+      `value = {text}  onChange={(e)=> setText(e.target.value)}` kar diya tha aur claim handle mein ` onClick={()=> createHandle()}`.
