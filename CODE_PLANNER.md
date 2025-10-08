@@ -93,3 +93,24 @@ fetch(url, options)
 
       neeche code me input box me
       `value = {text}  onChange={(e)=> setText(e.target.value)}` kar diya tha aur claim handle mein ` onClick={()=> createHandle()}`.
+
+15. abb kuch bss jaake handle bnana hai to..
+    ek folder bnaya [handle] karke theek usme phir mainee add kiya hai page.js file
+    phir seedha saadha code hai zyada dimag dahi nahi hai usme 
+    abb databse se jab bhi content nikalna dallna ho to simply do..
+
+    import clientPromise from "@/lib/mongodb"
+
+    const client = await clientPromise
+    const db = client.db("linktreeDB")
+    const collection = db.collection("links")
+
+    const item = await collection.findOne({ handle })
+
+    abb item.handle ya item.link kul mila ke item. karo aur kaam nikaal lo...
+
+    ha links ko externally import karne me issue aa raha tha to next.config.mjs me code add kiya hai.
+
+    yahi hai aur kya bn gaya app
+
+16. final git commit of the existing project is 
