@@ -40,9 +40,12 @@ export default function GenerateClient({ initialHandle = "" }) {
   }
 
   return (
-    <div className=' min-h-screen grid grid-cols-2'>
-      <div className="col1 flex justify-center items-center flex-col text-white">
-        <div className='flex flex-col gap-5 my-8'>
+  <div className='min-h-screen grid grid-cols-2 pt-36'>
+      {/* Left column */}
+      <div className="col1 flex flex-col items-center justify-center text-white px-4">
+        <ToastContainer />
+        <div className='flex flex-col gap-5 my-8 w-full max-w-2xl'>
+            
           <h1 className='font-bold text-4xl'>Create your Bittree</h1>
 
           <div className="item">
@@ -108,10 +111,9 @@ export default function GenerateClient({ initialHandle = "" }) {
             </div>
           </div>
         </div>
-        <div className="col2 relative w-full h-screen bg-[#E9C0E9]">
-          <ToastContainer />
-        </div>
       </div>
+      {/* Right column */}
+      <div className="col2 relative w-full min-h-screen bg-[#E9C0E9]"></div>
     </div>
   )
 }

@@ -69,4 +69,8 @@ fetch(url, options)
   .then(result => console.log(result))
   .catch(error => console.error("Error:", error));
 
-12.  page.js me build issue aa raha tha ki "build fails because useSearchParams is used directly in the page. For production, move that hook out of the page and pass search params via the Server Component page props." to maine simply kya kiya ki.. ek genrateclient ki file bna ke sara code usme daal diya aur use page.js me import kra diya
+12.  page.js me build issue aa raha tha ki "build fails because useSearchParams is used directly in the page. For production, move that hook out of the page and pass search params via the Server Component page props." to maine simply kya kiya ki.. ek genrateclient ki file bna ke sara code usme daal diya aur use page.js me import kra diya 1:13:00 min se explained
+
+13. ek add name ki api bnaayi api folder mein
+
+14. 
