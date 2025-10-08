@@ -12,7 +12,7 @@
 
 7. mai abb env.local file bnaunga
 
-8. mai abb generate folder bnaunga app folder ke andar aur usme page.js file iss file me use apni links enter karega ye wo form jisse wo linktree ki apni  links enter karega
+8. mai abb generate folder bnaunga app folder ke andar aur usme page.js file iss file me user apni links enter karega ye wo form jisse wo linktree ki apni  links enter karega
 
 9. abb route.js bnegi jaake .. api/generate waale folder mein
 
@@ -44,4 +44,29 @@ const result = await collection.insertOne(body)
 
 phir thuderclient ko chalana mongodbcompass me jaake connect dbana tab data usme aa jayega mongodb mein.
 
-51:56
+10. abb maine react-toastify donwload kiya notifications ke liye
+
+11. phir app/generate/page.js mein post reqest lgaayi hai iske liye (kuch aisi dikhti hai)
+
+const url = "https://example.com/api/add";
+
+const data = {
+  link: "https://site.com",
+  linktext: "My link",
+  handle: "user123"
+};
+
+const options = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+};
+
+fetch(url, options)
+  .then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.error("Error:", error));
+
+12.  page.js me build issue aa raha tha ki "build fails because useSearchParams is used directly in the page. For production, move that hook out of the page and pass search params via the Server Component page props." to maine simply kya kiya ki.. ek genrateclient ki file bna ke sara code usme daal diya aur use page.js me import kra diya
