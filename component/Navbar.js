@@ -6,7 +6,7 @@ const Navbar = () => {
   <nav className='sticky top-0 z-50 border-b border-white/10 bg-neutral-950/80 backdrop-blur-xl'>
     <div className='mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4'>
       <Link href="/" className='text-2xl font-semibold tracking-tight text-white'>
-        LinkTree
+        BIOO
       </Link>
 
       <ul className='hidden items-center gap-8 text-sm font-light text-white/80 md:flex'>

@@ -13,8 +13,8 @@ export async function GET(request) {
     }
 
     // Connect to MongoDB and check if handle exists
-    const client = await clientPromise
-    const db = client.db("linktreeDB")
+  const client = await clientPromise
+  const db = client.db("biooDB")
     const collection = db.collection("links")
 
     const existingUser = await collection.findOne({ handle })

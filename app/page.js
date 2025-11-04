@@ -33,7 +33,7 @@ export default function Home() {
           </h1>
 
           <p className="max-w-xl text-lg font-light text-white/70 sm:text-xl">
-            Share the work you care about, spotlight what&rsquo;s new, and greet your community with a page that feels like you. LinkTree makes it effortless.
+            Share the work you care about, spotlight what&rsquo;s new, and greet your community with a page that feels like you. BIOO makes it effortless.
           </p>
 
           <div className="space-y-4">
@@ -42,7 +42,7 @@ export default function Home() {
             </label>
             <div className="flex flex-col gap-3 sm:flex-row">
               <div className="flex flex-1 items-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-5 py-4 text-lg focus-within:border-orange-400/80">
-                <span className="text-sm text-white/40">linktr.ee/</span>
+                <span className="text-sm text-white/40">bioo.one/</span>
                 <input
                   id="handle-input"
                   type="text"
@@ -65,7 +65,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center gap-6 text-white/50">
             <div className="flex items-center gap-2">
               <span className="text-lg">⭐</span>
-              <span className="text-sm">Loved by 6M+ creators</span>
+              <span className="text-sm">Loved by creators</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-lg">🧡</span>
@@ -82,7 +82,7 @@ export default function Home() {
               </div>
               <div className="space-y-3">
                 <div className="rounded-2xl border border-white/10 bg-neutral-950/70 px-6 py-4 text-white/80">
-                  “LinkTree helped me grow a curious, kind community across platforms.”
+                  “BIOO helped me grow a curious, kind community across platforms.”
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-neutral-950/60 px-6 py-4 text-white/60">
                   Weekly analytics digest · Smart scheduling · Personalized themes
@@ -109,7 +109,7 @@ export default function Home() {
         <div className="space-y-4">
           <h2 className="text-3xl font-semibold text-white md:text-4xl">Share more than links. Share context.</h2>
           <p className="max-w-2xl text-lg text-white/60">
-            Curate collections, spotlight launches, and help people understand why it matters. Your LinkTree keeps everything warm, clear, and on-brand.
+            Curate collections, spotlight launches, and help people understand why it matters. Your BIOO page keeps everything warm, clear, and on-brand.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
@@ -152,7 +152,7 @@ export default function Home() {
           <div className="space-y-4">
             <h2 className="text-3xl font-semibold text-white md:text-4xl">Ready to greet your audience with a friendly hello?</h2>
             <p className="max-w-xl text-base text-white/70">
-              Pick a template, drop in your must-click moments, and you&rsquo;re live. LinkTree is your warm welcome across every platform.
+              Pick a template, drop in your must-click moments, and you&rsquo;re live. BIOO is your warm welcome across every platform.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">

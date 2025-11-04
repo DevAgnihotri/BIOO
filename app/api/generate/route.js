@@ -5,7 +5,7 @@ export async function POST(request) {
     const body = await request.json()
 
     const client = await clientPromise;
-    const db = client.db("linktree")
+    const db = client.db("biooDB")
     const collection = db.collection("links")
 
     const result = await collection.insertOne(body)

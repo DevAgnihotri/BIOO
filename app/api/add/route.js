@@ -14,8 +14,8 @@ export async function POST(request) {
     }
 
     // Connect to MongoDB and save data
-    const client = await clientPromise
-    const db = client.db("linktreeDB") // You can change the database name
+  const client = await clientPromise
+  const db = client.db("biooDB") // Database aligned with BIOO branding
     const collection = db.collection("links")
 
     // Check if handle already exists
@@ -39,8 +39,8 @@ export async function POST(request) {
     console.log("Data saved to MongoDB:", result.insertedId)
 
     return Response.json({
-      success: true,
-      message: "Your Bittree has been created successfully!",
+  success: true,
+  message: "Your BIOO hub has been created successfully!",
       data: { handle, links, pic, desc, id: result.insertedId }
     })
   } catch (error) {

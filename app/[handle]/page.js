@@ -8,7 +8,7 @@ export default async function Page({ params }) {
   const { handle } = await params
 
   const client = await clientPromise
-  const db = client.db("linktreeDB")
+  const db = client.db("biooDB")
   const collection = db.collection("links")
 
   const item = await collection.findOne({ handle })
@@ -56,7 +56,7 @@ export default async function Page({ params }) {
         <div className="rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-center text-sm text-white/60 backdrop-blur">
           <span className="mr-2 text-white/80">✨</span>
           <Link href="/" className="font-medium text-blue-200 hover:text-blue-100">
-            Build your own LinkTree
+            Build your own BIOO page
           </Link>
         </div>
       </div>

@@ -46,7 +46,7 @@ export default function GenerateClient({ initialHandle = "" }) {
 
         <div className='space-y-4 text-center md:text-left'>
           <span className='inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs font-medium uppercase tracking-[0.2em] text-white/70'>
-            Craft your LinkTree
+            Craft your BIOO page
           </span>
           <h1 className='text-4xl font-semibold leading-tight text-white sm:text-5xl'>Shape a page that feels like a warm hello.</h1>
           <p className='max-w-2xl text-base text-white/60 sm:text-lg'>We&rsquo;ll guide you through the essentials—handle, links, and a human bio. Add personality along the way.</p>
@@ -58,7 +58,7 @@ export default function GenerateClient({ initialHandle = "" }) {
               <h2 className='text-lg font-semibold text-white'>Step 1 · Your handle</h2>
               <p className='text-sm text-white/60'>This is the doorway to your world. Keep it simple and recognisable.</p>
               <div className='rounded-2xl border border-white/15 bg-neutral-950/70 px-5 py-4 focus-within:border-orange-400/70'>
-                <div className='flex items-center gap-2 text-sm text-white/40'>linktr.ee/
+                <div className='flex items-center gap-2 text-sm text-white/40'>bioo.one/
                   <input
                     value={handle || ""}
                     onChange={e => sethandle(e.target.value)}
@@ -135,7 +135,7 @@ export default function GenerateClient({ initialHandle = "" }) {
                 onClick={submitLinks}
                 className='w-full rounded-2xl bg-orange-400 px-10 py-4 text-base font-semibold text-black shadow-md shadow-orange-500/30 transition-transform hover:-translate-y-0.5 hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none'
               >
-                Create my LinkTree
+                Launch my BIOO
               </button>
             </div>
           </div>

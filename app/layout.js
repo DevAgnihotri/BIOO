@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "LinkTree Clone",
-  description: "Your links in one place",
+  title: "BIOO",
+  description: "Your links in one welcoming place",
 };
 
 export default function RootLayout({ children }) {
