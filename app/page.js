@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import { useState } from "react"
 import { useRouter } from "next/navigation";
 
@@ -7,55 +6,97 @@ export default function Home() {
 
   const [text, setText] = useState("")
   const router = useRouter()
+  
   const createHandle = async () => {
     if (!text) return
 
-    // Check if handle exists in database
     const response = await fetch(`/api/check?handle=${text}`)
     const data = await response.json()
 
     if (data.exists) {
       alert("Handle already exists! Please choose another one.")
     } else {
-      // Handle doesn't exist, redirect to generate page
       router.push(`/generate?handle=${text}`)
     }
   }
 
   return (
-    <main>
-      <section className="grid min-h-[100vh] grid-cols-2">
-        <div className="flex justify-center items-center flex-col ml-[3vw] gap-4 bg-gray-800">
-       
-          <p className="text-shadow-white font-bold text-8xl max-w-[40vw]">A link in bio built for you.</p>
-          <p className="text-shadow-white text-2xl max-w-[40vw]">Join 70M+ people using Linktree for their link in bio. One link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other social media profiles.</p>
-        
-        <form className="flex items-center gap-4">
-          <label htmlFor="handle" className="sr-only">Handle</label>
-          <input
-            id="handle"
-            name="handle"
-            type="text"
-            value = {text}
-            onChange={(e)=> setText(e.target.value)}
-            placeholder="Enter your handle"
-            className="rounded-md px-4 py-3 w-[28vw] max-w-full bg-white text-black placeholder-gray-500 focus:outline-none"
-          />
-          <button
-            type="button"
-            onClick={()=> createHandle()}
-            className="bg-amber-400 text-black font-bold px-6 py-3 rounded-md hover:opacity-90"
-          >
-            claim your handle
-          </button>
-        </form>
-        </div>
-        <div className = "flex justify-center items-center flex-col mr-[3vw] gap-4 bg-amber-700">
+    <main className="min-h-screen bg-black">
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-8 py-24">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          
+          {/* Left side - Content */}
+          <div className="space-y-8">
+            <h1 className="text-6xl font-extralight leading-tight">
+              Everything you are.
+              <br />
+              <span className="text-orange-500">In one simple link.</span>
+            </h1>
+            
+            <p className="text-lg font-light text-white/70 leading-relaxed">
+              Join millions using LinkTree for their link in bio. One link to share everything you create from Instagram, TikTok, Twitter, YouTube and more.
+            </p>
+            
+            <div className="space-y-4">
+              <div className="flex gap-3">
+                <input
+                  type="text"
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  placeholder="yourname"
+                  className="flex-1 px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-orange-500 font-light"
+                />
+                <button
+                  onClick={createHandle}
+                  className="px-8 py-4 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-light"
+                >
+                  Claim your link
+                </button>
+              </div>
+              <p className="text-sm font-light text-white/50">
+                linktr.ee/<span className="text-blue-400">{text || "yourname"}</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Right side - Visual */}
+          <div className="relative">
+            <div className="aspect-square bg-gradient-to-br from-orange-500/20 to-blue-500/20 rounded-3xl border border-white/10 flex items-center justify-center">
+              <div className="text-center space-y-4">
+                <div className="w-24 h-24 bg-white/10 rounded-full mx-auto"></div>
+                <div className="space-y-2">
+                  <div className="h-12 bg-white/5 rounded-lg border border-white/10"></div>
+                  <div className="h-12 bg-white/5 rounded-lg border border-white/10"></div>
+                  <div className="h-12 bg-white/5 rounded-lg border border-white/10"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
       </section>
-      <section className="bg-amber-950">
 
+      {/* Features Section */}
+      <section className="max-w-7xl mx-auto px-8 py-24">
+        <div className="grid md:grid-cols-3 gap-8">
+          
+          <div className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-orange-500/50 transition-colors">
+            <h3 className="text-2xl font-light mb-4">Share your links</h3>
+            <p className="text-white/60 font-light">Add all your important links in one place and share them easily.</p>
+          </div>
+
+          <div className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors">
+            <h3 className="text-2xl font-light mb-4">Track your clicks</h3>
+            <p className="text-white/60 font-light">See how many people are clicking on your links and content.</p>
+          </div>
+
+          <div className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-orange-500/50 transition-colors">
+            <h3 className="text-2xl font-light mb-4">Customize your page</h3>
+            <p className="text-white/60 font-light">Make it yours with themes, colors, and custom backgrounds.</p>
+          </div>
+
+        </div>
       </section>
     </main>
   );

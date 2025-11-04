@@ -1,28 +1,29 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 const Navbar = () => {
   return (
-  <nav className='bg-white text-black flex fixed justify-between top-12 gap-10 right-[5vw] p-6 w-[90vw] rounded-full z-50'>
-         <Link href="/">
-           <Image className=' logo items-center'
-             src="https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/66634daccb34e6d65a41c76d_download.svg"
-             alt="Linktree Logo"
-             width={120}
-             height={120}
-             style={{ height: 'auto' }}
-           />
-         </Link>
-      <ul className='flex gap-10 items-center'>
-        <Link href="/"><li>Templates</li></Link>
-        <Link href="/"><li>Marketplace</li></Link>
-        <Link href="/"><li>Pricing</li></Link>
+  <nav className='bg-black border-b border-white/10 px-8 py-4'>
+    <div className='max-w-7xl mx-auto flex items-center justify-between'>
+      <Link href="/" className='text-xl font-light tracking-tight'>
+        LinkTree
+      </Link>
+      
+      <ul className='flex gap-8 items-center font-light text-sm'>
+        <Link href="/"><li className='hover:text-orange-500 transition-colors'>Templates</li></Link>
+        <Link href="/"><li className='hover:text-blue-500 transition-colors'>Marketplace</li></Link>
+        <Link href="/"><li className='hover:text-orange-500 transition-colors'>Pricing</li></Link>
       </ul>
-        <div className="flex">
-            <button className='flex bg-gray-50 hover:bg-gray-300 text-shadow-black px-4 ml-auto py-2 p-25 rounded'>Log in</button>
-            <button className='flex bg-gray-900 hover:bg-black text-white px-4 py-2 p-25 rounded-full'>Sign Up free</button>
-        </div>
+
+      <div className="flex gap-3">
+        <button className='px-5 py-2 text-sm font-light hover:text-blue-400 transition-colors'>
+          Log in
+        </button>
+        <button className='px-5 py-2 bg-orange-500 text-white text-sm font-light rounded-full hover:bg-orange-600 transition-colors'>
+          Sign up free
+        </button>
+      </div>
+    </div>
   </nav>
   )
 }

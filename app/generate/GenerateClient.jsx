@@ -40,80 +40,89 @@ export default function GenerateClient({ initialHandle = "" }) {
   }
 
   return (
-  <div className='min-h-screen grid grid-cols-2 pt-36'>
-      {/* Left column */}
-      <div className="col1 flex flex-col items-center justify-center text-white px-4">
-        <ToastContainer />
-        <div className='flex flex-col gap-5 my-8 w-full max-w-2xl'>
-            
-          <h1 className='font-bold text-4xl'>Create your Bittree</h1>
-
-          <div className="item">
-            <h2 className='font-semibold text-2xl'>Step 1: Claim your Handle</h2>
-            <div className='mx-4'>
-              <input
-                value={handle || ""}
-                onChange={e => sethandle(e.target.value)}
-                className='px-4 py-2 my-2 focus:outline-gray-500 rounded-full'
-                type="text"
-                placeholder='Choose a Handle'
-              />
-            </div>
+    <div className='min-h-screen bg-black text-white'>
+      <div className="max-w-4xl mx-auto px-8 py-16">
+        <ToastContainer theme="dark" />
+        
+        <div className='space-y-12'>
+          <div>
+            <h1 className='text-4xl font-light mb-2'>Create your page</h1>
+            <p className='text-white/60 font-light'>Set up your link in bio in 3 simple steps</p>
           </div>
 
-          <div className="item">
-            <h2 className='font-semibold text-2xl'>Step 2: Add Links</h2>
-            {links && links.map((item, index) => (
-              <div key={index} className='mx-4'>
-                <input
-                  value={item.linktext || ""}
-                  onChange={e => handleChange(index, item.link, e.target.value)}
-                  className='px-4 py-2 mx-2 my-2 focus:outline-gray-500 rounded-full'
-                  type="text"
-                  placeholder='Enter link text'
-                />
-                <input
-                  value={item.link || ""}
-                  onChange={e => handleChange(index, e.target.value, item.linktext)}
-                  className='px-4 py-2 mx-2 my-2 focus:outline-gray-500 rounded-full'
-                  type="text"
-                  placeholder='Enter link'
-                />
-              </div>
-            ))}
-            <button onClick={addLink} className='p-5 py-2 mx-2 bg-slate-900 text-white font-bold rounded-3xl'>+ Add Link</button>
+          {/* Step 1 */}
+          <div className="space-y-4">
+            <h2 className='text-xl font-light'>Step 1: Choose your handle</h2>
+            <input
+              value={handle || ""}
+              onChange={e => sethandle(e.target.value)}
+              className='w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-orange-500 font-light'
+              type="text"
+              placeholder='yourname'
+            />
+            <p className='text-sm font-light text-white/50'>
+              Your link: linktr.ee/<span className="text-blue-400">{handle || "yourname"}</span>
+            </p>
           </div>
 
-          <div className="item">
-            <h2 className='font-semibold text-2xl'>Step 3: Add Picture and Description</h2>
-            <div className='mx-4 flex flex-col'>
-              <input
-                value={pic || ""}
-                onChange={e => setpic(e.target.value)}
-                className='px-4 py-2 mx-2 my-2 focus:outline-gray-500 rounded-full'
-                type="text"
-                placeholder='Enter link to your Picture'
-              />
-              <input
-                value={desc || ""}
-                onChange={e => setdesc(e.target.value)}
-                className='px-4 py-2 mx-2 my-2 focus:outline-gray-500 rounded-full'
-                type="text"
-                placeholder='Enter description'
-              />
-              <button
-                disabled={pic === "" || handle === "" || links[0].linktext === ""}
-                onClick={submitLinks}
-                className='disabled:bg-slate-500 p-5 py-2 mx-2 w-fit my-5 bg-slate-900 text-white font-bold rounded-3xl'
-              >
-                Create your BitTree
-              </button>
+          {/* Step 2 */}
+          <div className="space-y-4">
+            <h2 className='text-xl font-light'>Step 2: Add your links</h2>
+            <div className='space-y-3'>
+              {links && links.map((item, index) => (
+                <div key={index} className='flex gap-3'>
+                  <input
+                    value={item.linktext || ""}
+                    onChange={e => handleChange(index, item.link, e.target.value)}
+                    className='flex-1 px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-blue-500 font-light'
+                    type="text"
+                    placeholder='Link title'
+                  />
+                  <input
+                    value={item.link || ""}
+                    onChange={e => handleChange(index, e.target.value, item.linktext)}
+                    className='flex-1 px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-blue-500 font-light'
+                    type="text"
+                    placeholder='https://...'
+                  />
+                </div>
+              ))}
             </div>
+            <button 
+              onClick={addLink} 
+              className='px-6 py-3 bg-white/5 border border-white/10 text-white font-light rounded-lg hover:bg-white/10 transition-colors'
+            >
+              + Add another link
+            </button>
+          </div>
+
+          {/* Step 3 */}
+          <div className="space-y-4">
+            <h2 className='text-xl font-light'>Step 3: Profile details</h2>
+            <input
+              value={pic || ""}
+              onChange={e => setpic(e.target.value)}
+              className='w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-orange-500 font-light'
+              type="text"
+              placeholder='Profile picture URL'
+            />
+            <input
+              value={desc || ""}
+              onChange={e => setdesc(e.target.value)}
+              className='w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-orange-500 font-light'
+              type="text"
+              placeholder='Bio (optional)'
+            />
+            <button
+              disabled={pic === "" || handle === "" || links[0].linktext === ""}
+              onClick={submitLinks}
+              className='w-full px-8 py-4 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-light disabled:opacity-50 disabled:cursor-not-allowed'
+            >
+              Create your page
+            </button>
           </div>
         </div>
       </div>
-      {/* Right column */}
-      <div className="col2 relative w-full min-h-screen bg-[#E9C0E9]"></div>
     </div>
   )
 }
