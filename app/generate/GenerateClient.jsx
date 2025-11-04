@@ -40,86 +40,104 @@ export default function GenerateClient({ initialHandle = "" }) {
   }
 
   return (
-    <div className='min-h-screen bg-black text-white'>
-      <div className="max-w-4xl mx-auto px-8 py-16">
+    <div className='min-h-[calc(100vh-4rem)] bg-transparent text-white'>
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-16 px-6 py-20 md:py-28">
         <ToastContainer theme="dark" />
-        
-        <div className='space-y-12'>
-          <div>
-            <h1 className='text-4xl font-light mb-2'>Create your page</h1>
-            <p className='text-white/60 font-light'>Set up your link in bio in 3 simple steps</p>
-          </div>
 
-          {/* Step 1 */}
-          <div className="space-y-4">
-            <h2 className='text-xl font-light'>Step 1: Choose your handle</h2>
-            <input
-              value={handle || ""}
-              onChange={e => sethandle(e.target.value)}
-              className='w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-orange-500 font-light'
-              type="text"
-              placeholder='yourname'
-            />
-            <p className='text-sm font-light text-white/50'>
-              Your link: linktr.ee/<span className="text-blue-400">{handle || "yourname"}</span>
-            </p>
-          </div>
+        <div className='space-y-4 text-center md:text-left'>
+          <span className='inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs font-medium uppercase tracking-[0.2em] text-white/70'>
+            Craft your LinkTree
+          </span>
+          <h1 className='text-4xl font-semibold leading-tight text-white sm:text-5xl'>Shape a page that feels like a warm hello.</h1>
+          <p className='max-w-2xl text-base text-white/60 sm:text-lg'>We&rsquo;ll guide you through the essentials—handle, links, and a human bio. Add personality along the way.</p>
+        </div>
 
-          {/* Step 2 */}
-          <div className="space-y-4">
-            <h2 className='text-xl font-light'>Step 2: Add your links</h2>
-            <div className='space-y-3'>
-              {links && links.map((item, index) => (
-                <div key={index} className='flex gap-3'>
+        <div className='grid gap-10 md:grid-cols-2'>
+          <div className='space-y-10'>
+            <div className='space-y-4 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur'>
+              <h2 className='text-lg font-semibold text-white'>Step 1 · Your handle</h2>
+              <p className='text-sm text-white/60'>This is the doorway to your world. Keep it simple and recognisable.</p>
+              <div className='rounded-2xl border border-white/15 bg-neutral-950/70 px-5 py-4 focus-within:border-orange-400/70'>
+                <div className='flex items-center gap-2 text-sm text-white/40'>linktr.ee/
                   <input
-                    value={item.linktext || ""}
-                    onChange={e => handleChange(index, item.link, e.target.value)}
-                    className='flex-1 px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-blue-500 font-light'
+                    value={handle || ""}
+                    onChange={e => sethandle(e.target.value)}
+                    className='flex-1 bg-transparent text-lg text-white placeholder:text-white/30 focus:outline-none'
                     type="text"
-                    placeholder='Link title'
-                  />
-                  <input
-                    value={item.link || ""}
-                    onChange={e => handleChange(index, e.target.value, item.linktext)}
-                    className='flex-1 px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-blue-500 font-light'
-                    type="text"
-                    placeholder='https://...'
+                    placeholder='yourname'
                   />
                 </div>
-              ))}
+              </div>
+              <p className='text-xs text-white/50'>We&rsquo;ll check availability before we publish.</p>
             </div>
-            <button 
-              onClick={addLink} 
-              className='px-6 py-3 bg-white/5 border border-white/10 text-white font-light rounded-lg hover:bg-white/10 transition-colors'
-            >
-              + Add another link
-            </button>
+
+            <div className='space-y-4 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur'>
+              <h2 className='text-lg font-semibold text-white'>Step 3 · Profile details</h2>
+              <p className='text-sm text-white/60'>A friendly face and a sentence about what you&rsquo;re up to makes a big difference.</p>
+              <div className='space-y-4'>
+                <input
+                  value={pic || ""}
+                  onChange={e => setpic(e.target.value)}
+                  className='w-full rounded-2xl border border-white/15 bg-neutral-950/70 px-5 py-4 text-white placeholder:text-white/30 focus:border-orange-400/70 focus:outline-none'
+                  type="text"
+                  placeholder='Profile picture URL'
+                />
+                <textarea
+                  value={desc || ""}
+                  onChange={e => setdesc(e.target.value)}
+                  className='h-32 w-full resize-none rounded-2xl border border-white/15 bg-neutral-950/70 px-5 py-4 text-white placeholder:text-white/30 focus:border-orange-400/70 focus:outline-none'
+                  placeholder='A short bio or welcome message'
+                />
+              </div>
+            </div>
           </div>
 
-          {/* Step 3 */}
-          <div className="space-y-4">
-            <h2 className='text-xl font-light'>Step 3: Profile details</h2>
-            <input
-              value={pic || ""}
-              onChange={e => setpic(e.target.value)}
-              className='w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-orange-500 font-light'
-              type="text"
-              placeholder='Profile picture URL'
-            />
-            <input
-              value={desc || ""}
-              onChange={e => setdesc(e.target.value)}
-              className='w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-orange-500 font-light'
-              type="text"
-              placeholder='Bio (optional)'
-            />
-            <button
-              disabled={pic === "" || handle === "" || links[0].linktext === ""}
-              onClick={submitLinks}
-              className='w-full px-8 py-4 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-light disabled:opacity-50 disabled:cursor-not-allowed'
-            >
-              Create your page
-            </button>
+          <div className='space-y-10'>
+            <div className='space-y-4 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur'>
+              <h2 className='text-lg font-semibold text-white'>Step 2 · Add your links</h2>
+              <p className='text-sm text-white/60'>Spotlight launches, playlists, shop drops—whatever fits your story right now.</p>
+              <div className='space-y-5'>
+                {links && links.map((item, index) => (
+                  <div key={index} className='space-y-3 rounded-2xl border border-white/15 bg-neutral-950/70 p-4'>
+                    <div className='flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/40'>
+                      Link {index + 1}
+                      <span>{item.link ? "Active" : "Draft"}</span>
+                    </div>
+                    <input
+                      value={item.linktext || ""}
+                      onChange={e => handleChange(index, item.link, e.target.value)}
+                      className='w-full rounded-xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/30 focus:border-blue-400/70 focus:outline-none'
+                      type="text"
+                      placeholder='Link title (e.g. Shop, Newsletter, Latest video)'
+                    />
+                    <input
+                      value={item.link || ""}
+                      onChange={e => handleChange(index, e.target.value, item.linktext)}
+                      className='w-full rounded-xl border border-white/10 bg-transparent px-4 py-3 text-white placeholder:text-white/30 focus:border-blue-400/70 focus:outline-none'
+                      type="text"
+                      placeholder='https://'
+                    />
+                  </div>
+                ))}
+              </div>
+              <button 
+                onClick={addLink} 
+                className='w-full rounded-2xl border border-dashed border-white/25 px-4 py-4 text-sm font-medium text-white/70 transition-colors hover:border-white/50 hover:text-white'
+              >
+                + Add another link
+              </button>
+            </div>
+
+            <div className='space-y-4 rounded-3xl border border-white/10 bg-gradient-to-br from-blue-500/10 via-transparent to-orange-500/10 p-6 text-center backdrop-blur'>
+              <p className='text-sm text-white/70'>Everything look good? We&rsquo;ll save and publish your page instantly. You can return anytime to tweak copy, colors, or your lineup.</p>
+              <button
+                disabled={pic === "" || handle === "" || links[0].linktext === ""}
+                onClick={submitLinks}
+                className='w-full rounded-2xl bg-orange-400 px-10 py-4 text-base font-semibold text-black shadow-md shadow-orange-500/30 transition-transform hover:-translate-y-0.5 hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none'
+              >
+                Create my LinkTree
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -18,44 +18,47 @@ export default async function Page({ params }) {
   }
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-8">
-      <div className="max-w-xl w-full">
-        
-        {/* Profile Section */}
-        <div className="flex flex-col items-center mb-12">
+    <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center px-6 py-16">
+      <div className="w-full max-w-xl space-y-12">
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-10 text-center shadow-[0_25px_60px_-40px_rgba(37,99,235,0.6)] backdrop-blur">
           <Image
             src={item.pic}
             alt={`${item.handle} avatar`}
-            width={120}
-            height={120}
-            className="rounded-full object-cover mb-4 border-2 border-white/10"
+            width={140}
+            height={140}
+            className="mx-auto mb-6 h-36 w-36 rounded-full border border-white/20 object-cover"
           />
-          <h1 className='text-2xl font-light text-white mb-2'>@{item.handle}</h1>
-          {item.desc && (
-            <p className='text-white/60 font-light text-center'>{item.desc}</p>
+          <h1 className='text-3xl font-semibold text-white'>@{item.handle}</h1>
+          {item.desc ? (
+            <p className='mt-4 text-base text-white/70'>{item.desc}</p>
+          ) : (
+            <p className='mt-4 text-base text-white/50'>Sharing moments, projects, and things worth discovering.</p>
           )}
         </div>
 
-        {/* Links Section */}
         <div className="space-y-4">
           {item.links.map((link, index) => (
             <Link 
               key={index} 
               href={link.link}
-              className="block w-full px-8 py-5 bg-white/5 border border-white/10 rounded-xl text-center text-white font-light hover:bg-white/10 hover:border-orange-500/50 transition-all"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block w-full transform rounded-2xl border border-white/10 bg-white/5 px-10 py-5 text-center text-lg font-medium text-white transition-all hover:-translate-y-1 hover:border-orange-400/60 hover:bg-orange-400/15"
             >
-              {link.linktext}
+              <span className="flex flex-col gap-1 text-white/90 group-hover:text-white">
+                {link.linktext}
+                <span className="text-xs font-light uppercase tracking-[0.3em] text-white/30 group-hover:text-blue-200">Tap to open</span>
+              </span>
             </Link>
           ))}
         </div>
 
-        {/* Footer */}
-        <div className="mt-16 text-center">
-          <Link href="/" className="text-sm font-light text-white/40 hover:text-blue-400 transition-colors">
-            Create your own LinkTree
+        <div className="rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-center text-sm text-white/60 backdrop-blur">
+          <span className="mr-2 text-white/80">✨</span>
+          <Link href="/" className="font-medium text-blue-200 hover:text-blue-100">
+            Build your own LinkTree
           </Link>
         </div>
-
       </div>
     </div>
   )

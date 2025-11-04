@@ -3,23 +3,23 @@ import Link from 'next/link'
 
 const Navbar = () => {
   return (
-  <nav className='bg-black border-b border-white/10 px-8 py-4'>
-    <div className='max-w-7xl mx-auto flex items-center justify-between'>
-      <Link href="/" className='text-xl font-light tracking-tight'>
+  <nav className='sticky top-0 z-50 border-b border-white/10 bg-neutral-950/80 backdrop-blur-xl'>
+    <div className='mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4'>
+      <Link href="/" className='text-2xl font-semibold tracking-tight text-white'>
         LinkTree
       </Link>
-      
-      <ul className='flex gap-8 items-center font-light text-sm'>
-        <Link href="/"><li className='hover:text-orange-500 transition-colors'>Templates</li></Link>
-        <Link href="/"><li className='hover:text-blue-500 transition-colors'>Marketplace</li></Link>
-        <Link href="/"><li className='hover:text-orange-500 transition-colors'>Pricing</li></Link>
+
+      <ul className='hidden items-center gap-8 text-sm font-light text-white/80 md:flex'>
+        <li><Link href="/" className='transition-colors hover:text-orange-400'>Templates</Link></li>
+        <li><Link href="/" className='transition-colors hover:text-blue-400'>Marketplace</Link></li>
+        <li><Link href="/" className='transition-colors hover:text-orange-400'>Pricing</Link></li>
       </ul>
 
       <div className="flex gap-3">
-        <button className='px-5 py-2 text-sm font-light hover:text-blue-400 transition-colors'>
+        <button className='rounded-full border border-white/15 px-5 py-2 text-sm font-medium text-white/90 transition-all hover:border-blue-400 hover:text-white'>
           Log in
         </button>
-        <button className='px-5 py-2 bg-orange-500 text-white text-sm font-light rounded-full hover:bg-orange-600 transition-colors'>
+        <button className='rounded-full bg-orange-400 px-5 py-2 text-sm font-medium text-black shadow-lg shadow-orange-500/30 transition-all hover:bg-orange-500'>
           Sign up free
         </button>
       </div>
