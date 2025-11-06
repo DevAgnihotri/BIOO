@@ -24,27 +24,16 @@ I built this using **Next.js 14** with the App Router, hooked it up to **MongoDB
 
 ## 🚀 Core Features
 
-### 🎯 Handle System
-
-I implemented a smart handle claiming system. You type a username, I check if it's available in real-time, and boom—it's yours. No waiting, no complicated sign-ups.
-
-### ⚡ Lightning Fast
-
-I used Next.js App Router with server components and API routes. Everything loads instantly, and the database queries are optimized to keep response times under control.
-
-### 🔗 Link Management
-
-Add, edit, and organize all your important links in one place. I added toast notifications so you always know what's happening—no guessing games.
-
-### 📱 Mobile Ready
-
-I designed this mobile-first. Whether you're on a phone or desktop, the experience stays smooth and intuitive.
-
-### 🛡️ Data Persistence
-
-All your links live safely in MongoDB. I set up proper connection pooling so the database doesn't get hammered, even when traffic spikes.
+| Feature | Description |
+|---------|-------------|
+| **Handle System** | Claim your unique `@handle` and get your own shareable URL |
+| **Lightning Fast** | Built on Next.js 14 with optimized server components for instant loads |
+| **Link Management** | Add, edit, and organize unlimited links in one place |
+| **Mobile Ready** | Fully responsive design that looks great on any device |
+| **Data Persistence** | All your links safely stored in MongoDB Atlas |
 
 ## 🛠️ Tech Stack I Used
+
 
 ```
 Frontend
@@ -108,50 +97,11 @@ lib/
 - Used dynamic routes `[handle]` for user pages
 - Centralized DB logic so I don't repeat connection code everywhere
 
-## ⚙️ Getting Started
-
-Want to run this locally? Here's how:
-
-### 1️⃣ Clone the repo
-
-```bash
-git clone https://github.com/DevAgnihotri/BIOO.git
-cd BIOO
-```
-
-### 2️⃣ Install everything
-
-```bash
-npm install
-```
-
-### 3️⃣ Set up your environment
-
-Create a `.env.local` file in the root and add:
-
-```env
-MONGODB_URI=your_mongodb_connection_string
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
-
-**Where to get these:**
-
-- Get your MongoDB URI from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (free tier works fine)
-- The site URL is just your local dev server
-
-### 4️⃣ Run it
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) and you're good to go! 🎉
-
 ## � Screenshots
 
 ### Landing Page
 
-<img src="Screenshots/homescreen.png" alt="BIOO Homepage" width="600"/>
+<img src="Screenshots/homescreen.png" alt="BIOO Homepage"/>
 
 _This is where you claim your unique handle_
 
@@ -159,7 +109,7 @@ _This is where you claim your unique handle_
 
 ### Real-Time Handle Check
 
-<img src="Screenshots/availblehandle.png" alt="Handle availability" width="600"/>
+<img src="Screenshots/availblehandle.png" alt="Handle availability"/>
 
 _I built instant validation so you know right away if your handle is free_
 
@@ -167,7 +117,7 @@ _I built instant validation so you know right away if your handle is free_
 
 ### Creating Your Space
 
-<img src="Screenshots/createhandle.png" alt="Create your handle" width="600"/>
+<img src="Screenshots/createhandle.png" alt="Create your handle"/>
 
 _Clean, simple flow to get you set up fast_
 
@@ -175,7 +125,7 @@ _Clean, simple flow to get you set up fast_
 
 ### Register Handle
 
-<img src="Screenshots/addhandle.png" alt="Add links" width="600"/>
+<img src="Screenshots/addhandle.png" alt="Add links"/>
 
 _Register your handle you want to share_
 
